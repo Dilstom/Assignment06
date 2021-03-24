@@ -24,7 +24,7 @@ function init() {
   // HANDLE THE SUBMISSION OF THE FORM AND THEN IMMEDIATELY PREVENT THE SUBMISSION
   let empForm = document.getElementById("empForm");
 
-  empForm.addEventListener("click", (e) => {
+  empForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     // CREATE 5 VARIABLES FOR ID, NAME, EXT, EMAIL, AND DEPT
@@ -39,11 +39,10 @@ function init() {
     let loginDetails = window.opener.document.getElementById("loginDetails");
 
     // SET THE TEXT OF THE LOGINDETAILS ELEMENT TO THE ABOVE SET VARIABLES
-    if (id && name && extension && email && department) {
-      loginDetails.innerHTML = `${id} <br> ${name} <br> ${extension} <br> ${email} <br> ${department}`;
+      loginDetails.innerHTML = `ID: ${id} <br>Name: ${name} <br>Extension: ${extension} <br>Email: ${email} <br>Department: ${department}`;
+      
       // CLOSE THE POPUP
       window.close();
-    }
 
     // THE DATA SHOULD SHOW ON THE INDEX.HTML PAGE
   });
